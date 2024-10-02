@@ -6,18 +6,28 @@ import { useState } from 'react';
 
 export default function Home() {
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [email, setEmail] = useState<string | null>(null);
 
-  const handleSuccess = () => {
-    setIsSubmitted(!isSubmitted);
+  const handleSuccess = (submittedEmail: string) => {
+    setIsSubmitted(true);
+    setEmail(submittedEmail);
     console.log(isSubmitted);
   };
+
+  const dismissSuccess = () => {
+    setIsSubmitted(false);
+  };
   return (
-    <div className={` ${roboto.className} min-h-[100%] `}>
-      {isSubmitted ? (
-        <SucessMobile onSubmitSuccess={handleSuccess} />
-      ) : (
-        <Form onSubmitSuccess={handleSuccess} />
-      )}
+    <div className='sm:bg-charcoalGrey min-h-[100%] sm:flex sm:justify-center sm:items-center'>
+      <div
+        className={` ${roboto.className}  sm:container  sm:bg-white sm:rounded-xl sm:py-5 sm:px-7`}
+      >
+        {isSubmitted ? (
+          <SucessMobile email={email} dismissSuccess={dismissSuccess} />
+        ) : (
+          <Form onSubmitSuccess={handleSuccess} />
+        )}
+      </div>
     </div>
   );
 }
