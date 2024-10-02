@@ -8,10 +8,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      container: {
+        center: true,
+        padding: "1.5rem",
+        screens: {
+          sm: "640px",
+        },
       },
+      colors: {
+        slateGrey: "hsl(234, 29%, 20%)",
+        charcoalGrey: "hsl(235, 18%, 26%)",
+        tomato: "hsl(4, 100%, 67%)",
+        white: "hsl(0, 0%, 100%)",
+        grey: "hsl(231, 7%, 60%)",
+      },
+      // backgroundImage: {
+      //   mobile: "url('/src/public/illustration-sign-up-mobile.svg')",
+      //   desktop: "url('.src/public/illustration-sign-up-desktop.svg')",
+      // }
     },
   },
   plugins: [],
