@@ -7,6 +7,7 @@ export const SuccessIcon = (props: SuccessIconProps) => {
       width='64'
       height='64'
       viewBox='0 0 64 64'
+      className='sm:w-10 '
     >
       <defs>
         <linearGradient id='a' x1='100%' x2='0%' y1='0%' y2='100%'>
@@ -35,6 +36,7 @@ export const ListIcon = (props: ListIconProps) => {
       width='21'
       height='21'
       viewBox='0 0 21 21'
+      className='w-8'
     >
       <g fill='none'>
         <circle cx='10.5' cy='10.5' r='10.5' fill='#FF6155' />

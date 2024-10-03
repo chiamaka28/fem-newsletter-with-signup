@@ -25,13 +25,24 @@ const Form: React.FC<FormProps> = ({ onSubmitSuccess }) => {
   };
 
   return (
-    <div className='flex flex-col sm:flex-row-reverse '>
-      <div className=" w-full h-72  bg-[url('/illustration-sign-up-mobile.svg')] sm:bg-[url('/illustration-sign-up-desktop.svg')] bg-cover bg-no-repeat rounded-r-xl"></div>
-      <div className='w-[90%] sm:w-full sm:flex sm:justify-center sm:flex-col mx-auto pt-7 text-slateGrey'>
-        <h2 className='text-slateGrey font-bold text-4xl py-2'>
+    <div className='flex flex-col sm:flex-row-reverse sm:p-4  md:h-[500px] '>
+      <div className='relative sm:w-[50%]   rounded-xl overflow-hidden'>
+        <img
+          src='./illustration-sign-up-mobile.svg'
+          className='w-full h-80 sm:hidden object-cover'
+          alt=''
+        />
+        <img
+          src='./illustration-sign-up-desktop.svg'
+          className='w-full h-full hidden sm:block object-cover'
+          alt=''
+        />
+      </div>
+      <div className='w-[90%]  sm:max-w-[300px] sm:p-5 sm:text-sm  mx-auto pt-7 text-slateGrey'>
+        <h2 className='text-slateGrey font-bold text-4xl  py-2 sm:text-center'>
           Stay updated!
         </h2>
-        <p className='my-3 '>
+        <p className='my-3'>
           Join 60,000+ product managers receiving monthly updates on:
         </p>
         <div className=' my-5 '>
@@ -50,13 +61,13 @@ const Form: React.FC<FormProps> = ({ onSubmitSuccess }) => {
             </li>
           </ul>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)} className='my-3'>
+        <form onSubmit={handleSubmit(onSubmit)} className='my-5 sm:my-1'>
           <div className='flex justify-between items-center'>
             <label htmlFor='email' className='text-xs font-bold '>
               Email address
             </label>
             {errors.email && (
-              <span className='text-tomato text-xs'>
+              <span className='text-tomato text-xs '>
                 {errors.email.message}
               </span>
             )}
@@ -73,13 +84,15 @@ const Form: React.FC<FormProps> = ({ onSubmitSuccess }) => {
             })}
             placeholder='email@company.com'
             className={`${
-              errors.email ? 'border-tomato text-tomato' : 'border-grey'
-            } w-full h-14 border  px-6 rounded-lg my-2 focus:outline-none`}
+              errors.email
+                ? 'border-tomato text-tomato bg-red-200  placeholder-tomato'
+                : 'border-grey'
+            } w-full h-14 sm:h-12 border  px-6 rounded-lg my-2 sm:my-1 focus:outline-none`}
           />
 
           <button
             type='submit'
-            className='h-14 bg-slateGrey font-semibold rounded-lg w-full text-white  mt-2'
+            className='h-14 sm:h-12 bg-slateGrey font-semibold rounded-lg w-full text-white  mt-2'
           >
             Subscribe to monthly newsletter
           </button>

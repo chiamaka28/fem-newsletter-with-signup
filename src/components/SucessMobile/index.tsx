@@ -8,14 +8,14 @@ interface FormProps {
 
 const SucessMobile: React.FC<FormProps> = ({ email, dismissSuccess }) => {
   return (
-    <div className='min-h-screen w-[90%] mx-auto text-slateGrey mt-32'>
+    <div className=' mx-auto text-slateGrey mt-24 sm:mt-0 w-[350px]  py-7 px-9 '>
       <div className=''>
-        <div className='my-7'>
+        <div className='my-7 sm:my-1 '>
           <SuccessIcon />
         </div>
-        <div className='my-5'>
+        <div className='my-5 sm:my-1'>
           <h3 className='text-4xl font-bold '>Thanks for subscribing!</h3>
-          <p className='my-4'>
+          <p className='my-4 text-xs '>
             {`A confirmation email has been sent to ${email}. Please
             open it and click the button inside to confirm your subscription.`}
           </p>
@@ -26,7 +26,7 @@ const SucessMobile: React.FC<FormProps> = ({ email, dismissSuccess }) => {
         <button
           type='submit'
           onClick={dismissSuccess}
-          className='h-14 bg-slateGrey font-semibold rounded-lg w-full text-white  mt-64'
+          className='h-12 bg-slateGrey hover:bg-gradient-to-r hover:from-pink-500 hover:to-tomato font-semibold rounded-lg w-full text-white  mt-32 sm:mt-0'
         >
           Dismiss message
         </button>

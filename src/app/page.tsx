@@ -19,13 +19,15 @@ export default function Home() {
   };
   return (
     <div className='sm:bg-charcoalGrey min-h-[100%] sm:flex sm:justify-center sm:items-center'>
-      <div
-        className={` ${roboto.className}  sm:container  sm:bg-white sm:rounded-xl sm:py-5 sm:px-7`}
-      >
+      <div className={` ${roboto.className}   `}>
         {isSubmitted ? (
-          <SucessMobile email={email} dismissSuccess={dismissSuccess} />
+          <div className='bg-white rounded-xl'>
+            <SucessMobile email={email} dismissSuccess={dismissSuccess} />
+          </div>
         ) : (
-          <Form onSubmitSuccess={handleSuccess} />
+          <div className='bg-white sm:container sm:rounded-xl '>
+            <Form onSubmitSuccess={handleSuccess} />
+          </div>
         )}
       </div>
     </div>
